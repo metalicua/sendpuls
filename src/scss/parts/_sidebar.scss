@@ -1,0 +1,79 @@
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+    background: $sidebar-gradient;
+    box-shadow: inset -1px 0px 0px rgba(28, 175, 94, 0.1);
+    transition: $transition-base;    
+
+    &__footer {
+        position: absolute;
+        left: 0;
+        bottom: 0; 
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-top: 1px solid rgba($color-black, 0.07);
+    }
+}
+
+.profile {
+    display: flex;
+    padding-top: 35px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+
+    &__avatar {
+       
+        img {
+            margin-right: 10px;
+            border-radius: 50%;
+            border: 2px solid $color-white;
+        }
+    }
+
+    &__link {
+
+        &:hover {
+            .arrow {
+                stroke: white;
+            }
+           
+        }
+    }
+
+    span {
+        display: block;
+    }
+
+    &__name {
+        margin-bottom: 3px;
+        font-size: $font-14;
+        color: $color-white;    
+    }
+
+    &__followers {
+        font-size: $font-12;
+        font-weight: 700;
+        color: $color-opacity-black30;
+    }
+}
+
+.footer {
+
+    &__link {
+        width: 33.33%;
+        padding: 10px 0;
+        display: inline-block;
+        text-align: center;
+        font-size: $font-12;
+        color: $color-darken-green;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

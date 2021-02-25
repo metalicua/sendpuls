@@ -1,0 +1,24 @@
+// typography
+
+h1,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: $font-h1;
+    color: $color-dark-green;  
+}
+
+h3 {
+    font-size: $font-h3;
+}
+
+h4 {
+    font-size: $font-13;
+    color: $color-black;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,33 @@
+.navigation {
+
+    &__list {
+        list-style: none;
+    }
+
+    &__link {
+        padding: 15px 20px;
+        margin: 0 20px;
+        display: block;
+        font-size: $font-14;
+        color: $color-white;
+        @media (min-width: 576px) and (max-width: 1199px) {
+            font-size: $font-12;
+        }
+        
+
+        &--active {
+            border-radius: 5px;
+            background: $color-opacity-white15;
+        }
+
+        &:hover {
+            border-radius: 5px;
+            background: $color-opacity-white15;  
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+}

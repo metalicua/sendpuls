@@ -1,0 +1,119 @@
+.dashboard {
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    max-width: 768px;
+    justify-content: center;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.cards {
+  //   flex: 0 0 21%;
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    flex: 0 0 45%;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    flex: 0 0 50%;
+  }
+
+  &__info {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-family: $font-oswald;
+    color: $color-white;
+  }
+
+  &__social {
+    padding: 20px;
+  }
+
+  &__number {
+    display: block;
+    padding-left: 20px;
+    font-size: $font-42;
+    font-weight: 700;
+  }
+
+  &__followers {
+    padding-left: 20px;
+    font-size: $font-11;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+  }
+
+  &__place {
+    padding: 5px 0;
+    text-align: right;
+    font-size: $font-26;
+  }
+
+  &__user {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  &__img {
+    margin-right: 5px;
+
+    img {
+      border-radius: 4px;
+    }
+  }
+
+  &__network {
+    color: $color-dark-red;
+    opacity: 0.5;
+  }
+  &__mail {
+    color: $color-dark-red;
+  }
+}
+
+.facebook {
+  background: $facebook-gradient;
+}
+
+.twitter {
+  background: $twitter-gradient;
+}
+
+.instagram {
+  background: $insta-gradient;
+}
+
+.linked {
+  background: $linked-gradient;
+}
+
+.youtube {
+  background: $youtube-gradient;
+}
+.snap {
+  background: $snap-gradient;
+
+  .card__number,
+  .card__followers {
+    color: $color-black;
+    font-weight: 700;
+  }
+}
+.google {
+  background: $google-gradient;
+}
+.vine {
+  background: $vimeo-gradient;
+}
