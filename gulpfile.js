@@ -28,6 +28,12 @@ gulp.task('html', function(){
       .pipe(gulp.dest('build/'))
       .pipe(browserSync.stream());
 });
+//fonts
+gulp.task('font', function(){
+    return gulp.src('src/fonts/*.*')
+      .pipe(gulp.dest('build/fonts'))
+      .pipe(browserSync.stream());
+});
 
 // css
 gulp.task('css', function(){
@@ -56,6 +62,12 @@ gulp.task('js', function(){
         .pipe(browserSync.stream());
 });
 
+//fontAwesome
+// gulp.task('icons', function() {
+//     return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+//         .pipe(gulp.dest('build/webfonts'));
+// });
+
 // image
 gulp.task('img', function(){
     return gulp.src('src/img/*')
@@ -77,7 +89,8 @@ gulp.task('sprite', function () {
 gulp.task('watch', function () {
     gulp.watch('src/*.html', gulp.parallel('html'));
     gulp.watch('src/scss/**/*.scss', gulp.parallel('css'));
+    gulp.watch('src/js/*.js', gulp.parallel('js'));
 });
 
 // default
-gulp.task('default', gulp.parallel('html', 'css', 'js', 'sprite', 'img', 'browser-sync', 'watch' ));
+gulp.task('default', gulp.parallel('html', 'css', 'js', 'img', 'browser-sync', 'watch' ));

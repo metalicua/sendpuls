@@ -1,3 +1,6 @@
+$(document).ready(function(){
+// handlebars
+
 var lastDay = {
     "users": [
         {
@@ -89,10 +92,7 @@ var lastDay = {
             "mail": "@12352178912" 
         }
     ]
-}
-
-$(document).ready(function(){
-// handlebars
+};
 
     var dayTemplate = $('#dayTemplate').html();
 

@@ -218,36 +218,7 @@
                   <div class="dashboard" id="js-dashboard">
         
                   </div>
-                  <script id="dayTemplate" type="text/x-handlebars-template">
-                    {{#each users}}
-                        <div class="cards">
-                                <div class="cards__info {{class}}">
-                                  <div class="cards__social">
-                                    <svg class="icon">
-                                      <use xlink:href="#{{class}}"></use>
-                                    </svg>
-                                  </div>
-                                  <div class="cards__numbers">
-                                      <span class="cards__number">{{number}}</span>
-                                      <span class="cards__followers">{{text}}</span>
-                                  </div>
-                                  <div class="cards__place">
-                                    <span>{{place}}</span>
-                                    <svg class="icon">
-                                      <use xlink:href="#{{arrow}}-{{rotate}}"></use>
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div class="cards__user">
-                                  <div class="cards__img"><img src="{{image_url}}" alt="" /></div>
-                                  <div class="cards__text">
-                                    <h4 class="cards__network">{{social}}</h4>
-                                    <h4 class="cards__mail">{{mail}}</h4>
-                                  </div>
-                                </div>
-                              </div>
-                    {{/each}}
-                </script>
+                  
                 </div>      
       </div>
     </article>
@@ -275,4 +246,34 @@
   
   
 </body>
+<script id="dayTemplate" type="text/x-handlebars-template">
+  {{#each users}}
+      <div class="cards">
+              <div class="cards__info {{class}}">
+                <div class="cards__social">
+                  <svg class="icon">
+                    <use xlink:href="#{{class}}"></use>
+                  </svg>
+                </div>
+                <div class="cards__numbers">
+                    <span class="cards__number">{{number}}</span>
+                    <span class="cards__followers">{{text}}</span>
+                </div>
+                <div class="cards__place">
+                  <span>{{place}}</span>
+                  <svg class="icon">
+                    <use xlink:href="#{{arrow}}-{{rotate}}"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="cards__user">
+                <div class="cards__img"><img src="{{image_url}}" alt="" /></div>
+                <div class="cards__text">
+                  <h4 class="cards__network">{{social}}</h4>
+                  <h4 class="cards__mail">{{mail}}</h4>
+                </div>
+              </div>
+            </div>
+  {{/each}}
+</script>
 </html>
