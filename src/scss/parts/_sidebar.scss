@@ -111,12 +111,12 @@
 
     &__name {
       margin-bottom: 3px;
-      font-size: $font-14;
+      font-size: $font-size-base;
       color: $color-white;
     }
 
     &__followers {
-      font-size: $font-12;
+      font-size: $font-size-medium;
       font-weight: 700;
       color: $color-opacity-black30;
     }
@@ -128,7 +128,7 @@
       padding: 10px 0;
       display: inline-block;
       text-align: center;
-      font-size: $font-12;
+      font-size: $font-size-medium;
       color: $color-darken-green;
 
       &:hover {

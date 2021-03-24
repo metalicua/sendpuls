@@ -6,16 +6,16 @@ h3 {
 }
 
 h1 {
-  font-size: $font-h1;
-  color: $color-dark-green;
+  font-size: $font-size-h1;
+  color: $color-content-title;
 }
 
 h3 {
-  font-size: $font-h3;
+  font-size: $font-size-h3;
 }
 
 h4 {
-  font-size: $font-13;
+  font-size: $font-size-h4;
   color: $color-black;
   font-weight: 400;
 }

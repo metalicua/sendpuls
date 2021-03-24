@@ -33,7 +33,7 @@
     &__subtitle {
       display: block;
       padding-bottom: 20px;
-      font-size: $font-14;
+      font-size: $font-size-base;
     }
 
     &__close {
@@ -58,7 +58,7 @@
       padding: 10px 25px;
       border-radius: 5px;
       color: $color-white;
-      font-size: $font-14;
+      font-size: $font-size-base;
       border: 1px solid $color-green;
       background: $color-green;
       cursor: pointer;
@@ -72,7 +72,7 @@
       border: 1px solid $color-gray;
 
       &::placeholder {
-        font-size: $font-14;
+        font-size: $font-size-base;
       }
     }
 

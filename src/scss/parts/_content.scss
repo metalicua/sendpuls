@@ -55,7 +55,7 @@
       width: 15px;
       height: 15px;
       text-align: center;
-      font-size: $font-10;
+      font-size: $font-size-very-small;
       border-radius: 50%;
       color: $color-white;
       background: $color-green-strong;
@@ -94,9 +94,9 @@
 
     .btn {
       padding: 10px;
-      font-size: $font-14;
-      color: $color-dark-green;
-      border: 1px solid $color-dark-green;
+      font-size: $font-size-base;
+      color: $color-content-title;
+      border: 1px solid $color-content-title;
       border-radius: 4px;
       background: transparent;
       cursor: pointer;
@@ -104,7 +104,7 @@
       &:hover {
         transition: $transition-base;
         color: $color-white;
-        background: $color-dark-green;
+        background: $color-content-title;
       }
     }
 
@@ -116,15 +116,15 @@
       }
       &__link {
         padding: 10px 0;
-        color: $color-dark-red;
+        color: $color-title-icon;
 
         &--active {
-          border-bottom: 5px solid $color-lighter-green;
+          border-bottom: 5px solid $color-hover-filter;
         }
 
         &:hover {
           transition: $transition-base;
-          border-bottom: 5px solid $color-lighter-green;
+          border-bottom: 5px solid $color-hover-filter;
         }
       }
     }

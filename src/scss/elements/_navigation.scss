@@ -8,11 +8,8 @@
     margin: 0 20px;
     display: flex;
     align-items: center;
-    font-size: $font-14;
+    font-size: $font-size-base;
     color: $color-white;
-    @media (min-width: 576px) and (max-width: 1199px) {
-      font-size: $font-12;
-    }
 
     &--active {
       border-radius: 5px;
