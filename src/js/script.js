@@ -81,25 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
             this.classList.toggle('burger--open');
             body.classList.toggle('overflow');
     
-            if (sideBar.style.display == 'block'){
+            if (sideBar.classList.contains('db') == true) {
                 
                 sideBar.animate([
                     { transform: 'translate3D(0, 0, 0)' },
                     { transform: 'translate3D(0, -300px, 0)' }
                   ], {
-                    duration: 1000,
+                    duration: 700,
                   })
                 setTimeout(function(){
-                    sideBar.style.display = 'none';
-                }, 900);
+                    sideBar.classList.remove('db');
+                }, 600);
                 return;
             }
-            sideBar.style.display = 'block';
+            sideBar.classList.add('db');
             sideBar.animate([
                 { transform: 'translate3D(0, -300px, 0)' },
                 { transform: 'translate3D(0, 0, 0)' }
               ], {
-                duration: 1000,
+                duration: 700,
               })
         });
 
