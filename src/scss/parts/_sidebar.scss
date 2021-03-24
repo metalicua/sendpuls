@@ -1,25 +1,88 @@
-.sidebar {
+@include responsive($xs) {
+  .burger {
+    position: absolute;
+    top: 22px;
+    left: 1%;
+    z-index: 999;
+    width: 35px;
+    height: 15px;
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+      content: "";
+    }
+
+    span,
+    &::after,
+    &::before {
+      height: 3px;
+      width: 100%;
+      right: 0;
+      position: absolute;
+      background: $color-black;
+      margin: 0 auto;
+    }
+
+    span {
+      top: 14px;
+    }
+
+    &::after {
+      top: 0px;
+    }
+
+    &::before {
+      bottom: 5px;
+    }
+
+    &--open {
+      span {
+        opacity: 0;
+        transition: 0.5s;
+      }
+      &:before {
+        transform: rotate(45deg);
+        top: 5px;
+        transition: 0.4s;
+        background-color: $color-white;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        top: 5px;
+        transition: 0.4s;
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .sidebar {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 240px;
-    min-height: 100vh;
-    position: relative;
     flex-direction: column;
     background: $sidebar-gradient;
     box-shadow: inset -1px 0px 0px rgba(28, 175, 94, 0.1);
-    transition: $transition-base;    
+    transition: $transition-base;
+    z-index: 10;
 
     &__footer {
-        position: absolute;
-        left: 0;
-        bottom: 0; 
-        margin: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        border-top: 1px solid rgba($color-black, 0.07);
+      position: static;
+      left: 0;
+      bottom: 0;
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-top: 1px solid rgba($color-black, 0.07);
     }
-}
+  }
 
-.profile {
+  .profile {
     display: flex;
     padding-top: 35px;
     margin-bottom: 40px;
@@ -27,53 +90,67 @@
     justify-content: center;
 
     &__avatar {
-       
-        img {
-            margin-right: 10px;
-            border-radius: 50%;
-            border: 2px solid $color-white;
-        }
+      img {
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 2px solid $color-white;
+      }
     }
 
     &__link {
-
-        &:hover {
-            .arrow {
-                stroke: white;
-            }
-           
+      &:hover {
+        .arrow {
+          stroke: white;
         }
+      }
     }
 
     span {
-        display: block;
+      display: block;
     }
 
     &__name {
-        margin-bottom: 3px;
-        font-size: $font-14;
-        color: $color-white;    
+      margin-bottom: 3px;
+      font-size: $font-14;
+      color: $color-white;
     }
 
     &__followers {
-        font-size: $font-12;
-        font-weight: 700;
-        color: $color-opacity-black30;
+      font-size: $font-12;
+      font-weight: 700;
+      color: $color-opacity-black30;
     }
+  }
+
+  .footer {
+    &__link {
+      width: 33.33%;
+      padding: 10px 0;
+      display: inline-block;
+      text-align: center;
+      font-size: $font-12;
+      color: $color-darken-green;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.footer {
+@include responsive($md) {
+  .burger {
+    display: none;
+  }
 
-    &__link {
-        width: 33.33%;
-        padding: 10px 0;
-        display: inline-block;
-        text-align: center;
-        font-size: $font-12;
-        color: $color-darken-green;
+  .sidebar {
+    display: block;
+    position: static;
+    min-height: 100vh;
 
-        &:hover {
-            text-decoration: underline;
-        }
+    &__footer {
+      position: absolute;
+      transform: translate(10px, 0);
     }
+  }
 }

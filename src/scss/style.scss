@@ -1,19 +1,20 @@
 // Extended Files
 
 // Common
-@import 'common/variables';
-@import 'common/typography';
-@import 'common/main';
 
+@import "common/variables";
+@import "common/mixins";
+@import "common/typography";
+@import "common/main";
 
 // Custom
-@import 'custom/sprite';
+@import "custom/sprite";
 
-//Elements 
-@import 'elements/navigation';
-@import 'elements/card';
-@import 'elements/popup';
+//Elements
+@import "elements/navigation";
+@import "elements/card";
+@import "elements/popup";
 
 // Parts
-@import 'parts/sidebar';
-@import 'parts/content';
+@import "parts/sidebar";
+@import "parts/content";

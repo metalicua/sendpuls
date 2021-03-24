@@ -1,119 +1,93 @@
-.dashboard {
-  max-width: 950px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+@include responsive($xs) {
+  .cards {
+    &__info {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      font-family: $font-oswald;
+      color: $color-white;
+    }
 
-  @media (min-width: 768px) and (max-width: 992px) {
-    max-width: 768px;
-    justify-content: center;
-  }
+    &__social {
+      padding: 20px;
+    }
 
-  @media (min-width: 320px) and (max-width: 767px) {
-    justify-content: center;
-  }
-}
+    &__number {
+      display: block;
+      padding-left: 20px;
+      font-size: $font-42;
+      font-weight: 700;
+    }
 
-.cards {
-  //   flex: 0 0 21%;
+    &__followers {
+      padding-left: 20px;
+      font-size: $font-11;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+    }
 
-  @media (min-width: 768px) and (max-width: 992px) {
-    flex: 0 0 45%;
-  }
+    &__place {
+      padding: 5px 0;
+      text-align: right;
+      font-size: $font-26;
+    }
 
-  @media (min-width: 320px) and (max-width: 767px) {
-    flex: 0 0 50%;
-  }
+    &__user {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+    }
 
-  &__info {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-family: $font-oswald;
-    color: $color-white;
-  }
+    &__img {
+      margin-right: 5px;
 
-  &__social {
-    padding: 20px;
-  }
+      img {
+        border-radius: 4px;
+      }
+    }
 
-  &__number {
-    display: block;
-    padding-left: 20px;
-    font-size: $font-42;
-    font-weight: 700;
-  }
-
-  &__followers {
-    padding-left: 20px;
-    font-size: $font-11;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-  }
-
-  &__place {
-    padding: 5px 0;
-    text-align: right;
-    font-size: $font-26;
-  }
-
-  &__user {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: center;
-  }
-
-  &__img {
-    margin-right: 5px;
-
-    img {
-      border-radius: 4px;
+    &__network {
+      color: $color-dark-red;
+      opacity: 0.5;
+    }
+    &__mail {
+      color: $color-dark-red;
     }
   }
 
-  &__network {
-    color: $color-dark-red;
-    opacity: 0.5;
+  .facebook {
+    background: $facebook-gradient;
   }
-  &__mail {
-    color: $color-dark-red;
+
+  .twitter {
+    background: $twitter-gradient;
   }
-}
 
-.facebook {
-  background: $facebook-gradient;
-}
+  .instagram {
+    background: $insta-gradient;
+  }
 
-.twitter {
-  background: $twitter-gradient;
-}
+  .linked {
+    background: $linked-gradient;
+  }
 
-.instagram {
-  background: $insta-gradient;
-}
-
-.linked {
-  background: $linked-gradient;
-}
-
-.youtube {
-  background: $youtube-gradient;
-}
-.snap {
-  background: $snap-gradient;
-
-  .card__number,
-  .card__followers {
+  .youtube {
+    background: $youtube-gradient;
+  }
+  .snap {
+    background: $snap-gradient;
     color: $color-black;
-    font-weight: 700;
+    .card__number,
+    .card__followers {
+      color: $color-black;
+      font-weight: 700;
+    }
   }
-}
-.google {
-  background: $google-gradient;
-}
-.vine {
-  background: $vimeo-gradient;
+  .google {
+    background: $google-gradient;
+  }
+  .vine {
+    background: $vimeo-gradient;
+  }
 }

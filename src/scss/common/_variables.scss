@@ -2,12 +2,19 @@
 
 //Animation
 
-$transition-base: .3s ease;
+$transition-base: 0.3s ease;
 
 // Fonts
-$font-basic: 'Roboto', sans-serif;
-$font-oswald: 'Oswald', sans-serif;
+$font-basic: "Roboto", sans-serif;
+$font-oswald: "Oswald", sans-serif;
 
+// Display size
+
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$xl: 992px;
+$lg: 1200px;
 
 // font content
 
@@ -23,25 +30,40 @@ $font-h3: 18px;
 
 // Colors
 
-$color-light-green: #27B983;
-$color-green: #53CC71;
-$color-dark-green: #1CAF5E;
-$color-green-strong: #1DCE6C;
-$color-darken-green: #147A42;
+$color-light-green: #27b983;
+$color-green: #53cc71;
+$color-dark-green: #1caf5e;
+$color-green-strong: #1dce6c;
+$color-darken-green: #147a42;
 $color-opacity-white10: rgba(255, 255, 255, 0.1);
 $color-opacity-white15: rgba(255, 255, 255, 0.15);
 $color-white: #fff;
 $color-opacity-black30: rgba(0, 0, 0, 0.3);
 $color-black: #333333;
-$color-dark-red: #540F0F;
-$color-lighter-green: #B8E986;
-$sidebar-gradient: linear-gradient(180deg, rgba(45,188,128,1) 0%, rgba(83,204,113,1) 100%);
-$facebook-gradient: linear-gradient(180deg, rgba(57,87,154,1) 0%, rgba(44,68,121,1) 100%);
-$twitter-gradient: linear-gradient(to bottom,#059FF5,#059FC3);
-$insta-gradient: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-$linked-gradient: linear-gradient(to bottom,#007EBB,#007E9D);
-$snap-gradient: linear-gradient(to bottom,#FFFE00,#F3F200);
-$youtube-gradient: linear-gradient(to bottom,#CE1312,#B01312);
-$google-gradient: linear-gradient(to bottom,#F93F2D,#C73F2D);
-$vimeo-gradient: linear-gradient(to bottom,#00B687,#008E87);
-$color-gray: #C5CFC9;
+$color-dark-red: #540f0f;
+$color-lighter-green: #b8e986;
+$sidebar-gradient: linear-gradient(
+  180deg,
+  rgba(45, 188, 128, 1) 0%,
+  rgba(83, 204, 113, 1) 100%
+);
+$facebook-gradient: linear-gradient(
+  180deg,
+  rgba(57, 87, 154, 1) 0%,
+  rgba(44, 68, 121, 1) 100%
+);
+$twitter-gradient: linear-gradient(to bottom, #059ff5, #059fc3);
+$insta-gradient: linear-gradient(
+  45deg,
+  #f09433 0%,
+  #e6683c 25%,
+  #dc2743 50%,
+  #cc2366 75%,
+  #bc1888 100%
+);
+$linked-gradient: linear-gradient(to bottom, #007ebb, #007e9d);
+$snap-gradient: linear-gradient(to bottom, #fffe00, #f3f200);
+$youtube-gradient: linear-gradient(to bottom, #ce1312, #b01312);
+$google-gradient: linear-gradient(to bottom, #f93f2d, #c73f2d);
+$vimeo-gradient: linear-gradient(to bottom, #00b687, #008e87);
+$color-gray: #c5cfc9;

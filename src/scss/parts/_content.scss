@@ -1,157 +1,181 @@
-.header {
-  &__form {
-    display: flex;
-    padding: 17px 0;
-    background-color: $color-white;
-  }
-
-  &__input {
-    width: 100%;
-    padding: 0 5px;
-    margin: 0 1%;
-    border: none;
-  }
-
-  &__button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-
-    &:hover {
-      transition: $transition-base;
-
-      svg {
-        transform: scale(1.2);
-      }
-    }
-  }
-
-  &__logo {
-    text-align: center;
-    background: $color-light-green;
-    transition: $transition-base;
-  }
-
-  &__link {
-    display: block;
-    padding: 15px 20px;
-    background: $color-opacity-white10;
-    text-align: center;
-  }
-}
-
-.notification {
-  position: relative;
-
-  .icon {
-    cursor: pointer;
-  }
-
-  span {
-    position: absolute;
-    top: -5px;
-    right: 10px;
-    width: 15px;
-    height: 15px;
-    text-align: center;
-    font-size: $font-10;
-    border-radius: 50%;
-    color: $color-white;
-    background: $color-green-strong;
-  }
-}
-.primary {
-  width: calc(100% - 240px);
-  min-height: 100vh;
-  background-color: #eff7ed;
-}
-.container-card {
-  .content {
-    width: 100%;
-
-    padding: 75px 125px;
-
-    @media (min-width: 992px) and (max-width: 1199px) {
-      padding: 50px;
-    }
-
-    @media (min-width: 768px) and (max-width: 991px) {
-      padding: 50px;
-    }
-
-    @media (min-width: 576px) and (max-width: 767px) {
-      padding: 20px;
-    }
-
-    @media (min-width: 320px) and (max-width: 575px) {
-      padding: 10px;
-    }
-
-    &__row {
-      max-width: 950px;
-      margin: auto;
-      padding-bottom: 25px;
-      justify-content: space-between;
-      align-items: center;
-
-      @media all and (min-width: 320px) and (max-width: 575px) {
-        display: block;
-        text-align: center;
-      }
-    }
-
-    &__filter {
-      max-width: 950px;
-      margin: auto;
-      margin-bottom: 50px;
-    }
-  }
-
-  .btn {
-    padding: 10px;
-    font-size: $font-14;
-    color: $color-dark-green;
-    border: 1px solid $color-dark-green;
-    border-radius: 4px;
-    background: transparent;
-    cursor: pointer;
-
-    &:hover {
-      transition: $transition-base;
-      color: $color-white;
-      background: $color-dark-green;
-    }
-  }
-
-  .filter {
-    &__list {
+@include responsive($xs) {
+  .header {
+    &__form {
       display: flex;
-      list-style: none;
-
-      @media (min-width: 320px) and (max-width: 575px) {
-        justify-content: center;
-      }
+      padding: 17px 0;
+      background-color: $color-white;
     }
 
-    &__item {
-      margin-right: 35px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+    &__input {
+      width: 100%;
+      padding: 0 5px;
+      margin: 0 1%;
+      border: none;
     }
 
-    &__link {
-      padding: 10px 0;
-      color: $color-dark-red;
-
-      &--active {
-        border-bottom: 5px solid $color-lighter-green;
-      }
+    &__button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
 
       &:hover {
         transition: $transition-base;
-        border-bottom: 5px solid $color-lighter-green;
+
+        svg {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__logo {
+      text-align: center;
+      background: $color-light-green;
+      transition: $transition-base;
+    }
+
+    &__link {
+      display: block;
+      padding: 15px 20px;
+      background: $color-opacity-white10;
+      text-align: center;
+    }
+  }
+
+  .notification {
+    position: relative;
+
+    .icon {
+      cursor: pointer;
+    }
+
+    &__quantity {
+      position: absolute;
+      top: -5px;
+      right: 10px;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      font-size: $font-10;
+      border-radius: 50%;
+      color: $color-white;
+      background: $color-green-strong;
+    }
+  }
+  .primary {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #eff7ed;
+  }
+  .container-card {
+    .content {
+      padding: 10px;
+
+      &__row {
+        display: block;
+        padding-bottom: 25px;
+        text-align: center;
+      }
+
+      &__title {
+        padding-bottom: 10px;
+      }
+
+      &__filter {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .dashboard {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    .btn {
+      padding: 10px;
+      font-size: $font-14;
+      color: $color-dark-green;
+      border: 1px solid $color-dark-green;
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        transition: $transition-base;
+        color: $color-white;
+        background: $color-dark-green;
+      }
+    }
+
+    .filter {
+      &__list {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+      }
+      &__link {
+        padding: 10px 0;
+        color: $color-dark-red;
+
+        &--active {
+          border-bottom: 5px solid $color-lighter-green;
+        }
+
+        &:hover {
+          transition: $transition-base;
+          border-bottom: 5px solid $color-lighter-green;
+        }
+      }
+    }
+  }
+}
+@include responsive($sm) {
+  .container-card {
+    .content {
+      &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__title {
+        padding-bottom: 0;
+      }
+    }
+    .filter {
+      &__list {
+        justify-content: start;
+      }
+
+      &__item {
+        margin-right: 35px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@include responsive($md) {
+  .primary {
+    width: calc(100% - 240px);
+  }
+  .container-card {
+    padding: 70px 0;
+
+    .content {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+  }
+}
+@include responsive($xl) {
+  .container-card {
+    .content {
+      .dashboard {
+        justify-content: space-between;
       }
     }
   }

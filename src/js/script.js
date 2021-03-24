@@ -1,112 +1,120 @@
-$(document).ready(function(){
-// handlebars
+document.addEventListener("DOMContentLoaded", () => {
 
-var lastDay = {
-    "users": [
-        {
-            "class": "facebook",
-            "social": "Facebook",
-            "number": "1,701",
-            "text": "followers", 
-            "place": "+4",
-            "rotate": "up",
-            "arrow": "arrow",
-            "image_url": "img/icon1.jpg",
-            "mail": "@abhisek.daas" 
-        },
-        {
-            "class": "twitter",
-            "social": "Twitter",
-            "number": "1,567",
-            "text": "followers",
-            "place": "-3",
-            "rotate": "down",
-            "arrow": "arrow",
-            "image_url": "img/icon2.jpg",
-            "mail": "@wholetthedasout" 
-        },
-        {
-            "class": "instagram",
-            "social": "Instagram",
-            "number": "1,139",
-            "text": "followers",
-            "place": "+11",
-            "rotate": "up",
-            "arrow": "arrow",
-            "image_url": "img/icon3.jpg",
-            "mail": "@wholetthedasout" 
-        },
-        {
-            "class": "linked",
-            "social": "LinkedIn",
-            "number": "2,016",
-            "text": "followers",
-            "place": "+39",
-            "rotate": "up",
-            "arrow": "arrow",
-            "image_url": "img/icon4.jpg",
-            "mail": "@abhisekd" 
-        },
-        {
-            "class": "youtube",
-            "social": "YouTube",
-            "number": "3,190",
-            "text": "followers",
-            "place": "+22",
-            "rotate": "up",
-            "arrow": "arrow",
-            "image_url": "img/icon5.jpg",
-            "mail": "@TheAbhisekD" 
-        },
-        {
-            "class": "snap",
-            "social": "Snapchat",
-            "number": "8,754",
-            "text": "snap score",
-            "place": "",
-            "rotate": "",
-            "arrow": "",
-            "image_url": "img/icon2.jpg",
-            "mail": "@abhisekd" 
-        },
-        {
-            "class": "google",
-            "social": "googlePlus",
-            "number": "1,033",
-            "text": "followers",
-            "place": "",
-            "rotate": "",
-            "arrow": "",
-            "image_url": "img/icon3.jpg",
-            "mail": "@+AbhisekDas" 
-        },
-        {
-            "class": "vine",
-            "social": "Vine",
-            "number": "1,033",
-            "text": "loops",
-            "place": "",
-            "rotate": "",
-            "arrow": "",
-            "image_url": "img/icon6.jpg",
-            "mail": "@12352178912" 
+    let burger = document.querySelector('.burger'),
+        sideBar = document.querySelector('.sidebar'),
+        body = document.querySelector('body'),
+        dashboard = document.getElementById('js-dashboard'),
+        popUp = document.querySelector('.js-btn'),
+        modalWondow = document.querySelector('.js-popup'),
+        closePopUp = document.querySelector('.js-close-btn');
+
+        // get HTTP
+
+        function getContent(cb) {
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', 'js/data.json');
+            xhr. addEventListener('load', () =>{
+                if(xhr.status !== 200) {
+                    console.log('Error', xhr.status);
+                    return
+                }
+                
+                let response = JSON.parse(xhr.responseText);
+                
+                cb(response);
+               
+            });
+     
+            xhr.send();
+           
+        };
+        function onGetUsersCallBack(users) {
+           
+          if (!users.length){
+              return;
+          }
+          renderUserList(users); 
         }
-    ]
-};
 
-    var dayTemplate = $('#dayTemplate').html();
+        // Rander User
+        function renderUserList(users){
+            let fragment = users.reduce(
+                (acc, user) => acc + newTemplate(user), '');
+                dashboard.insertAdjacentHTML('afterbegin', fragment);  
+        }
+        // Rander Template
+        function newTemplate(user){
+                return `
+                <div class="cards">
+                <div class="cards__info ${user.class}">
+                    <div class="cards__social">
+                    <svg class="icon">
+                        <use xlink:href="#${user.class}"></use>
+                    </svg>
+                    </div>
+                    <div class="cards__numbers">
+                        <span class="cards__number">${user.number}</span>
+                        <span class="cards__followers">${user.text}</span>
+                    </div>
+                    <div class="cards__place">
+                    <span>${user.place}</span>
+                    <svg class="icon">
+                        <use xlink:href="#${user.arrow}-${user.rotate}"></use>
+                    </svg>
+                    </div>
+                </div>
+                <div class="cards__user">
+                    <div class="cards__img"><img src="${user.image_url}" alt="" /></div>
+                    <div class="cards__text">
+                    <h4 class="cards__network">${user.social}</h4>
+                    <h4 class="cards__mail">${user.mail}</h4>
+                    </div>
+                </div>
+                </div>
+        `
+        }
 
-    var complatedDayTemplate = Handlebars.compile(dayTemplate);
-    $('#js-dashboard').html(complatedDayTemplate(lastDay));
+    // Mobile Burger
 
-//popup 
+        burger.addEventListener('click', function(){
+            this.classList.toggle('burger--open');
+            body.classList.toggle('overflow');
+    
+            if (sideBar.style.display == 'block'){
+                
+                sideBar.animate([
+                    { transform: 'translate3D(0, 0, 0)' },
+                    { transform: 'translate3D(0, -300px, 0)' }
+                  ], {
+                    duration: 1000,
+                  })
+                setTimeout(function(){
+                    sideBar.style.display = 'none';
+                }, 900);
+                return;
+            }
+            sideBar.style.display = 'block';
+            sideBar.animate([
+                { transform: 'translate3D(0, -300px, 0)' },
+                { transform: 'translate3D(0, 0, 0)' }
+              ], {
+                duration: 1000,
+              })
+        });
 
-    $('.js-btn').on('click', function () {
-        $('.js-popup').addClass('show');
+    //PopUp
+
+    popUp.addEventListener('click', function () {
+        modalWondow.classList.add('show');
+        body.classList.toggle('overflow');
     });
 
-    $('.js-close-btn').on('click', function () {
-       $('.js-popup').removeClass('show'); 
-    });       
+    closePopUp.addEventListener('click', function () {
+        modalWondow.classList.remove('show');
+        body.classList.toggle('overflow');
+    }); 
+    
+    getContent(onGetUsersCallBack);
 });
 
